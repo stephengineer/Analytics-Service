@@ -2,7 +2,7 @@
 
 Clostra Backend Programming Challenge
 
-(---)
+---
 
 Write a simple analytics service that accepts analytics reports as GET requests of the form:
 
@@ -10,7 +10,7 @@ Write a simple analytics service that accepts analytics reports as GET requests 
 
 where `cid` is a unique client ID. The response should be `200` OK with an empty body.
 
-(---)
+---
 
 The service should maintain a count of daily active users (unique cid's seen) for each GMT day. 
 
@@ -28,12 +28,12 @@ which should return the number of unique users seen in the month prior to and in
 
 The unique user counts may be approximate rather than precise if you can reason about accuracy.
 
-(---)
+---
 
 For testing purposes, the `collect` endpoint should accept an optional query parameter `d=<UNIX timestamp>`, which can be used to override the timestamp associated with a given analytics report.
  
 The system should be robust to restarts, but it is not necessary to retain data or support queries for dates older than 60 days.
 
-(---)
+---
 
 Design for performance on a single machine and low operational cost.
