@@ -1,6 +1,6 @@
 # Analytics-Service
 
-This is a Spring Boot Web Application with Redis and HyperLogLog to count daily and monthly Unique Visitors (UV).
+This is a RESTful Web Service built by [Spring Boot framework](https://spring.io/) with [Redis database](https://redis.io/) and [HyperLogLog algorithm](https://en.wikipedia.org/wiki/HyperLogLog) to count daily and monthly Unique Visitors (UV).
 
 ## Run the service
 ```sh
