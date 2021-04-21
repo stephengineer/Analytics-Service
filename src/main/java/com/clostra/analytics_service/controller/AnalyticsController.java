@@ -28,7 +28,7 @@ public class AnalyticsController {
      * @param d UNIX timestamp (optional)
      * @return httpstatus '200' OK with an empty body
      */
-    @GetMapping("collect")
+    @GetMapping("/collect")
     public ResponseEntity getReports(@RequestParam String cid, @RequestParam(required = false) String d) {
         this.analyticsService.saveClient(cid);
         return new ResponseEntity(HttpStatus.OK);
@@ -40,7 +40,7 @@ public class AnalyticsController {
      * @param d ISO 8601 date, YYYY-MM-DD
      * @return the number of unique users seen for the given GMT day
      */
-    @GetMapping("daily_uniques")
+    @GetMapping("/daily_uniques")
     public long getUniqueVisitorDaily(@RequestParam String d) {
         return this.analyticsService.getUniqueVisitorDaily(d);
     }
@@ -51,7 +51,7 @@ public class AnalyticsController {
      * @param d ISO 8601 date, YYYY-MM-DD
      * @return the number of unique users seen in the month prior to and including the given GMT day
      */
-    @GetMapping("monthly_uniques")
+    @GetMapping("/monthly_uniques")
     public long getUniqueVisitorMonthly(@RequestParam String d) {
         return this.analyticsService.getUniqueVisitorMonthly(d);
     }
