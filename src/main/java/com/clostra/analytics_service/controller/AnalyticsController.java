@@ -16,6 +16,11 @@ public class AnalyticsController {
     @Autowired
     private AnalyticsService analyticsService;
 
+    @GetMapping("/")
+    public String index() {
+        return "Analytics Service is running.";
+    }
+
     /**
      * Get status of analytics report
      * 
