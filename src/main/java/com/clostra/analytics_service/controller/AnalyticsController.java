@@ -2,7 +2,6 @@ package com.clostra.analytics_service.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +16,7 @@ public class AnalyticsController {
     @Autowired
     private AnalyticsService analyticsService;
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String index() {
         return "Analytics Service is running.";
     }
@@ -29,7 +28,7 @@ public class AnalyticsController {
      * @param d UNIX timestamp (optional)
      * @return httpstatus '200' OK with an empty body
      */
-    @RequestMapping("/collect")
+    @GetMapping("/collect")
     public ResponseEntity getReports(@RequestParam String cid, @RequestParam(required = false) String d) {
         this.analyticsService.saveClient(cid);
         return new ResponseEntity(HttpStatus.OK);
@@ -41,7 +40,7 @@ public class AnalyticsController {
      * @param d ISO 8601 date, YYYY-MM-DD
      * @return the number of unique users seen for the given GMT day
      */
-    @RequestMapping("/daily_uniques")
+    @GetMapping("/daily_uniques")
     public long getUniqueVisitorDaily(@RequestParam String d) {
         return this.analyticsService.getUniqueVisitorDaily(d);
     }
