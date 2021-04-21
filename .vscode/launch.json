@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AnalyticsServiceApplication<analytics_service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.clostra.analytics_service.AnalyticsServiceApplication",
+            "projectName": "analytics_service",
+            "args": ""
+        }
+    ]
+}

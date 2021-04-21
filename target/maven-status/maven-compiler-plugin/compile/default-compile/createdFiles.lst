@@ -1,0 +1,4 @@
+com/clostra/analytics_service/AnalyticsServiceApplication.class
+com/clostra/analytics_service/controller/AnalyticsController.class
+com/clostra/analytics_service/service/AnalyticsService.class
+com/clostra/analytics_service/utils/AnalyticsUtils.class

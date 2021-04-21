@@ -1,39 +1,13 @@
 # Analytics-Service
 
-Clostra Backend Programming Challenge
+This is a Spring Boot Web Application with Redis and HyperLogLog to count daily and monthly Unique Visitors (UV).
 
----
+## Run the service
+```sh
+mvn spring-boot:run
+```
 
-Write a simple analytics service that accepts analytics reports as GET requests of the form:
-
-`/collect?cid=<UUID>`
-
-where `cid` is a unique client ID. The response should be `200` OK with an empty body.
-
----
-
-The service should maintain a count of daily active users (unique cid's seen) for each GMT day. 
-
-The service should also support queries of the form:
-
-`/daily_uniques?d=<ISO 8601 date>`
-
-which should return the number of unique users seen for the given GMT day;
-
-and of the form:
-
-`/monthly_uniques?d=<ISO 8601 date>`
-
-which should return the number of unique users seen in the month prior to and including the given GMT day.
-
-The unique user counts may be approximate rather than precise if you can reason about accuracy.
-
----
-
-For testing purposes, the `collect` endpoint should accept an optional query parameter `d=<UNIX timestamp>`, which can be used to override the timestamp associated with a given analytics report.
- 
-The system should be robust to restarts, but it is not necessary to retain data or support queries for dates older than 60 days.
-
----
-
-Design for performance on a single machine and low operational cost.
+## Restful API URL
+**GET** `/collect?cid=<UUID>`: response is `200` OK with an empty body.
+**GET** `/daily_uniques?d=<ISO 8601 date>`: return the number of unique users seen for the given GMT day.
+**GET** `/monthly_uniques?d=<ISO 8601 date>`: return the number of unique users seen in the month prior to and including the given GMT day.
